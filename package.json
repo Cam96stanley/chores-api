@@ -1,0 +1,28 @@
+{
+  "name": "chore-api",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.11",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
