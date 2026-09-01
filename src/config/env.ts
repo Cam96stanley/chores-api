@@ -12,4 +12,6 @@ function requireEnv(name: string): string {
 
 export const env = {
     port: requireEnv('PORT'),
+    databaseUrl: requireEnv('DATABASE_URL'),
+    databaseMigrationUrl: requireEnv('DATABASE_MIGRATION_URL'),
 };
