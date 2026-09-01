@@ -3,7 +3,10 @@ import { families } from './families.js';
 import { timestamps } from './helpers.js';
 import { users } from './users.js';
 
-export const familyMemberRole = pgEnum('family_member_role', ['parent', 'child']);
+export const familyMemberRole = pgEnum('family_member_role', [
+    'parent',
+    'child',
+]);
 
 export const familyMembers = pgTable('family_members', {
     id: uuid('id').defaultRandom().primaryKey(),
