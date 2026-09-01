@@ -14,14 +14,14 @@ A RESTful API for managing household chores, users, and rewards.
 ### Prerequisites
 
 * Node.js
-* npm
+* pnpm
 
 ### Installation
 
 Clone the repository and install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Environment Variables
@@ -35,19 +35,19 @@ PORT=8000
 ### Running the Development Server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### Building for Production
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ### Running in Production
 
 ```bash
-npm start
+pnpm start
 ```
 
 ## Project Structure
