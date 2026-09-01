@@ -94,8 +94,9 @@ Response:
 
 | Command          | Description                   |
 | ---------------- | ----------------------------- |
-| `npm run dev`    | Start the development server  |
-| `npm run build`  | Compile TypeScript            |
-| `npm start`      | Start the production server   |
-| `npm run lint`   | Run Biome checks              |
-| `npm run format` | Format the project with Biome |
+| `pnpm dev`       | Start the development server  |
+| `pnpm build`     | Compile TypeScript            |
+| `pnpm start`     | Start the production server   |
+| `pnpm lint`      | Run Biome checks              |
+| `pnpm format`    | Format the project with Biome |
+| `pnpm lint:fix`  | Format the project with Biome |
