@@ -56,7 +56,7 @@ export const deleteUser = async (
     res: Response,
 ) => {
     const id = req.params.id;
-    const deletedUser = await deleteUserService(id);
+    const _deletedUser = await deleteUserService(id);
 
     if (!deleteUser) {
         return res.status(404).json({ error: 'User not found' });
