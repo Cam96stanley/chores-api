@@ -1,0 +1,1 @@
+ALTER TABLE "family_members" ADD CONSTRAINT "family_members_family_id_user_id_unique" UNIQUE("family_id","user_id");
