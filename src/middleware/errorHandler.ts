@@ -6,9 +6,9 @@ interface AppError extends Error {
 
 export default function handleError(
     err: AppError,
-    req: Request,
+    _req: Request,
     res: Response,
-    next: NextFunction,
+    _next: NextFunction,
 ) {
     const status = err.statusCode ?? 500;
     res.status(status).json({
