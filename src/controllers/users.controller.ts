@@ -1,13 +1,16 @@
 import type { Request, Response } from 'express';
-import type {
-    CreateUserInput,
-    UpdateUserInput,
+import {
+    type CreateLoginInput,
+    type CreateUserInput,
+    loginSchema,
+    type UpdateUserInput,
 } from '../db/schema/users.validation.js';
 import {
     createUserService,
     deleteUserService,
     getUserService,
     getUsersService,
+    loginService,
     updateUserService,
 } from '../services/users.service.js';
 
@@ -18,6 +21,12 @@ export const createUser = async (
     const { name, email, password } = req.body;
     const user = await createUserService({ name, email, password });
     res.status(201).json({ user });
+};
+
+export const login = async (req: Request, res: Response) => {
+    const { email, password } = loginSchema.parse(req.body);
+    const result = await loginService({ email, password });
+    res.status(200).json(result);
 };
 
 export const getUsers = async (_req: Request, res: Response) => {

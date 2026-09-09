@@ -1,9 +1,9 @@
 import { createInsertSchema, createUpdateSchema } from 'drizzle-zod';
-import type { z } from 'zod';
+import { z } from 'zod';
 import { users } from './users.js';
 
 export const createUserSchema = createInsertSchema(users, {
-    email: (schema) => schema.email('Invalid email address'),
+    email: (_schema) => z.email('Invalid email address'),
     password: (schema) =>
         schema.min(8, 'Password must be at least 8 characters'),
 }).omit({ id: true, createdAt: true, updatedAt: true, deletedAt: true });
@@ -11,7 +11,7 @@ export const createUserSchema = createInsertSchema(users, {
 export type CreateUserInput = z.infer<typeof createUserSchema>;
 
 export const updateUserSchema = createUpdateSchema(users, {
-    email: (schema) => schema.email('Invalid email address'),
+    email: (_schema) => z.email('Invalid email address'),
 })
     .omit({
         id: true,
@@ -25,3 +25,11 @@ export const updateUserSchema = createUpdateSchema(users, {
     });
 
 export type UpdateUserInput = z.infer<typeof updateUserSchema>;
+
+export const loginSchema = createInsertSchema(users, {
+    email: (_schema) => z.email('Invalid email address'),
+    password: (schema) =>
+        schema.min(8, 'Password must be at least 8 characters'),
+}).pick({ email: true, password: true });
+
+export type CreateLoginInput = z.infer<typeof loginSchema>;

@@ -14,4 +14,6 @@ export const env = {
     port: requireEnv('PORT'),
     databaseUrl: requireEnv('DATABASE_URL'),
     databaseMigrationUrl: requireEnv('DATABASE_MIGRATION_URL'),
+    jwtSecret: requireEnv('JWT_SECRET'),
+    jwtExpiresIn: Number(requireEnv('JWT_EXPIRES_IN')),
 };
